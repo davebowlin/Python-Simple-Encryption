@@ -23,11 +23,12 @@ again = True
 # Perform encryption and decryption.
 while again:
   message = input("Enter text message (blank to end):\n")
+  if message == "":
+    again = False
+    
   encrypted_message = encrypt(message, encryption_key)
   decrypted_message = decrypt(encrypted_message, encryption_key)
   
   print("Encrypted message:", encrypted_message)
   print("Decrypted message:", decrypted_message)
   print("\n")
-  if message == "":
-    again = False
